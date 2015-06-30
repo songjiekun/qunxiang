@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ImageWithCache" representedClassName="ImageWithCacheMore" syncable="YES">
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="product" maxCount="1" deletionRule="No Action" destinationEntity="Product" inverseName="images" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="ProductMore" syncable="YES">
+        <attribute name="createdAt" attributeType="Date" syncable="YES"/>
+        <attribute name="productCategory" attributeType="String" syncable="YES"/>
+        <attribute name="productDescription" attributeType="String" syncable="YES"/>
+        <attribute name="productPrice" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" syncable="YES"/>
+        <relationship name="images" toMany="YES" minCount="1" deletionRule="Cascade" ordered="YES" destinationEntity="ImageWithCache" inverseName="product" inverseEntity="ImageWithCache" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ImageWithCache" positionX="-405" positionY="18" width="128" height="75"/>
+        <element name="Product" positionX="-405" positionY="-18" width="128" height="135"/>
+    </elements>
+</model>
