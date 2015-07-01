@@ -1,0 +1,17 @@
+PODS:
+  - AVOSCloud (3.1.2.4)
+  - AVOSCloudSNS (3.1.2.4):
+    - AVOSCloud
+  - SVPullToRefresh (0.4.1)
+
+DEPENDENCIES:
+  - AVOSCloud
+  - AVOSCloudSNS
+  - SVPullToRefresh
+
+SPEC CHECKSUMS:
+  AVOSCloud: 83a2b0753eb784b2f6e5245241a841575dfb3cc6
+  AVOSCloudSNS: c6f3a3ae1990f115b11e6d6daad306babbdd3b5a
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+
+COCOAPODS: 0.37.2
