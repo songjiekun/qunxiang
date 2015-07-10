@@ -2,7 +2,7 @@
 //  ProductTableViewCell.h
 //  qunxiang
 //
-//  Created by song jiekun on 15/6/3.
+//  Created by song jiekun on 15/7/7.
 //  Copyright (c) 2015年 song jiekun. All rights reserved.
 //
 
@@ -14,6 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *productDescription;
 @property (weak, nonatomic) IBOutlet UILabel *productCategory;
 @property (weak, nonatomic) IBOutlet UILabel *productPrice;
-
 
 @end

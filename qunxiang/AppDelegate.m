@@ -25,6 +25,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //个性化navigation bar
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"back1.jpg"] forBarMetrics:UIBarMetricsDefault];
+    
+    //[[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
     //使用leancloud的身份证明
     [AVOSCloud setApplicationId:@"mo5qxlh3d8ccoplwzf5abcusjgdo2f5ti5224e8hplh36x50"
                       clientKey:@"8l5ktvkshzhd64ezfi7btj4fhoiuxg93ne7bkdarfqrbx8zk"];
@@ -111,7 +117,7 @@
 
 
 #pragma mark - 当app运行时，来处理push notification的数据
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     
     
     

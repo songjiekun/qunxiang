@@ -9,6 +9,7 @@
 #import "ProductListTableViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "AppDelegate.h"
+#import "ProductSectionHeader.h"
 
 @interface ProductListTableViewController ()<NSFetchedResultsControllerDelegate>
 
@@ -104,6 +105,22 @@
         
     }];
     
+    //注册 custom tableviewcell
+    UINib *nib = [UINib nibWithNibName:@"ProductTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"ProductTableViewCell"];
+    //[self.tableView registerNib:nib forHeaderFooterViewReuseIdentifier:@"ProductSectionHeader"];
+    [self.tableView registerClass:[ProductSectionHeader class] forHeaderFooterViewReuseIdentifier:@"ProductSectionHeader"];
+    
+    //ios 8设置tableview的高度
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)]){
+        
+        self.tableView.rowHeight= UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight=200;
+    }
+    
+    //去掉系统默认分割线
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -132,6 +149,13 @@
         destinationVC.imageCache=self.imageCache;
         destinationVC.ioQueue=self.ioQueue;
         destinationVC.internetQueue=self.internetQueue;
+        
+        ///init pageviews
+        destinationVC.pageViews=[[NSMutableArray alloc] initWithCapacity:5];
+        
+        for (NSInteger i = 0; i < 5; ++i) {
+            [destinationVC.pageViews addObject:[NSNull null]];
+        }
         
     }
     
@@ -214,7 +238,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainProductCell" forIndexPath:indexPath];
+    ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductTableViewCell" forIndexPath:indexPath];
     
     [self configureCell:cell atIndexPath:indexPath];
     
@@ -222,12 +246,34 @@
     
 }
 
-/*
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-    [self performSegueWithIdentifier:@"ShowProductDetail" sender:indexPath];
+    ProductSectionHeader *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ProductSectionHeader"];
+    
+    return headerView;
+    
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self performSegueWithIdentifier:@"ShowProductDetail" sender:tableView];
+    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)]){
+        
+        return UITableViewAutomaticDimension;
+    }
+    else {
+        
+        return 200;
+    }
+    
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.

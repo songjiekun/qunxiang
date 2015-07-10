@@ -17,6 +17,8 @@
     MainViewController *src = (MainViewController *)self.sourceViewController;
     ProductListTableViewController *dst = (ProductListTableViewController *) self.destinationViewController;
     
+    
+    
     if (src.currentViewController!=nil) {
         
         [src.currentViewController willMoveToParentViewController:nil];
@@ -25,10 +27,15 @@
         
     }
     
+    UIView *view=dst.view;
     src.currentViewController=dst;
     [src addChildViewController:dst];
-    [src.placeholderView addSubview:dst.view];
+    [src.placeholderView addSubview:view];
     [dst didMoveToParentViewController:src];
+    
+    view.translatesAutoresizingMaskIntoConstraints=NO;
+    [src.placeholderView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view)]];
+    [src.placeholderView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view)]];
     
 }
 
