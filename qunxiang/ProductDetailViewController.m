@@ -78,9 +78,17 @@
     
 }
 
+
+#pragma mark - scroll代理
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // 在入屏幕中的图片
-    [self loadVisiblePages];
+    
+    if(scrollView==self.productScrollView){
+        
+        [self loadVisiblePages];
+        
+    }
+    
 }
     
 - (void)loadPage:(NSInteger)page {
@@ -89,8 +97,9 @@
         return;
     }
     
-    // 1
+    //从pageview队列中选取page对应的pageview
     UIView *pageView = [self.pageViews objectAtIndex:page];
+    
     if ((NSNull*)pageView == [NSNull null]) {
         
         //autolayout在调用frame之前 都需要 layoutifneeded一下
@@ -111,7 +120,7 @@
         //新pageview添加到contentview
         [self.contentView addSubview:newPageView];
         
-        //必须设置为no
+        //translatesAutoresizingMaskIntoConstraints必须设置为no
         newPageView.translatesAutoresizingMaskIntoConstraints=NO;
         
         //设置constraints
@@ -130,7 +139,7 @@
         [self.contentView addConstraint:bottom];
         [self.contentView addConstraint:left];
         
-        //新pageview添加到数组中
+        //新pageview添加到队列中
         [self.pageViews replaceObjectAtIndex:page withObject:newPageView];
     }
 }
@@ -145,24 +154,23 @@
     UIView *pageView = [self.pageViews objectAtIndex:page];
     if ((NSNull*)pageView != [NSNull null]) {
         [pageView removeFromSuperview];
-        //pageView=nil;
         [self.pageViews replaceObjectAtIndex:page withObject:[NSNull null]];
     }
 }
     
 - (void)loadVisiblePages {
+    
     // autolayout在调用frame之前 都需要 layoutifneeded一下
     [self.productScrollView layoutIfNeeded];
-    CGFloat pageWidth = self.productScrollView.frame.size.width;//self.pageWidth;
+    CGFloat pageWidth = self.productScrollView.frame.size.width;
+    //计算当前是第几个页面
     NSInteger page = (NSInteger)floor((self.productScrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
-    // Update the page control
-    //self.pageControl.currentPage = page;
     
-    // Work out which pages you want to load
+    // 计算出那些页面是你需要载入内存的。一般只载入当前页面以及当前页面前后各一副页面就够了。
     NSInteger firstPage = page - 1;
     NSInteger lastPage = page + 1;
     
-    // Purge anything before the first page
+    //  first page前last page后的pageview都purge掉
     for (NSInteger i=0; i<firstPage; i++) {
         [self purgePage:i];
     }
@@ -179,8 +187,6 @@
 
 #pragma mark - ImageWithCache的代理
 -(void)refreshImage:(ImageWithCache *)sender withImage:(UIImage *)newImage{
-    
-    
     
     for (ImageWithCache *imageMore in self.pageImages) {
         
