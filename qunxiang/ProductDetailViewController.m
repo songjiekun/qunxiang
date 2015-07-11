@@ -49,13 +49,34 @@
     [self loadVisiblePages];
 }
 
-- (void)viewDidLayoutSubviews{
+#pragma mark - rotation
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     
-    [super viewWillLayoutSubviews];
-    self.pageWidth=[[UIScreen mainScreen] bounds].size.width;
-    //[self loadVisiblePages];
+    
+    
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    
+    //[self purgePage:currentpage];
+    [self.productScrollView layoutIfNeeded];
+    CGFloat pageWidth = self.productScrollView.frame.size.width;//self.pageWidth;
+    NSInteger page = (NSInteger)floor((self.productScrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+    
+
+    
+    
+    self.productScrollView.contentOffset=CGPointMake((page)*self.productScrollView.frame.size.width, self.productScrollView.contentOffset.y) ;
+    
+    
+    for (int i = 0; i<=self.pageImages.count-1; i++) {
+        [self purgePage:i];
+    }
+    
+    [self loadVisiblePages];
+    
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // 在入屏幕中的图片
@@ -71,12 +92,13 @@
     // 1
     UIView *pageView = [self.pageViews objectAtIndex:page];
     if ((NSNull*)pageView == [NSNull null]) {
-        // 2
-        //CGRect frame = self.productScrollView.bounds;
-        NSInteger leading = self.productScrollView.frame.size.width*page;//self.pageWidth* page;//frame.size.width * page;
         
-        // 3 创建imageview
-        //设置imageWithCache的代理
+        //autolayout在调用frame之前 都需要 layoutifneeded一下
+        [self.productScrollView layoutIfNeeded];
+        //新的view左侧与contentview左侧的距离
+        NSInteger leading = self.productScrollView.frame.size.width*page;
+        
+        //创建imageview
         ImageWithCacheMore *imageMore=(ImageWithCacheMore *)[self.pageImages objectAtIndex:page];
         imageMore.delegate=self;
 
@@ -86,9 +108,13 @@
         UIImageView *newPageView = [[UIImageView alloc] initWithImage:image];
         newPageView.contentMode = UIViewContentModeScaleAspectFit;
         
+        //新pageview添加到contentview
         [self.contentView addSubview:newPageView];
+        
         //必须设置为no
         newPageView.translatesAutoresizingMaskIntoConstraints=NO;
+        
+        //设置constraints
         NSLayoutConstraint *top=[NSLayoutConstraint constraintWithItem:newPageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
         
         NSLayoutConstraint *bottom=[NSLayoutConstraint constraintWithItem:newPageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
@@ -104,7 +130,7 @@
         [self.contentView addConstraint:bottom];
         [self.contentView addConstraint:left];
         
-        // 4
+        //新pageview添加到数组中
         [self.pageViews replaceObjectAtIndex:page withObject:newPageView];
     }
 }
@@ -125,7 +151,7 @@
 }
     
 - (void)loadVisiblePages {
-    // First, determine which page is currently visible
+    // autolayout在调用frame之前 都需要 layoutifneeded一下
     [self.productScrollView layoutIfNeeded];
     CGFloat pageWidth = self.productScrollView.frame.size.width;//self.pageWidth;
     NSInteger page = (NSInteger)floor((self.productScrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
