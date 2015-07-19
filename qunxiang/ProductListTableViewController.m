@@ -239,6 +239,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductTableViewCell" forIndexPath:indexPath];
+    //cell.contentView.translatesAutoresizingMaskIntoConstraints=NO;
     
     [self configureCell:cell atIndexPath:indexPath];
     

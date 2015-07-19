@@ -17,6 +17,10 @@
 		8003BAE81B1C336C00A9A8CF /* qunxiangTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8003BAE71B1C336C00A9A8CF /* qunxiangTests.m */; };
 		80062DDD1B381E09003F1808 /* ball_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80062DDC1B381E09003F1808 /* ball_icon.jpg */; };
 		80062DE01B382365003F1808 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80062DDF1B382365003F1808 /* IntroViewController.m */; };
+		801A98A81B5B6AB700A811BC /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 801A98A61B5B6AB700A811BC /* TestCollectionViewCell.m */; };
+		801A98A91B5B6AB700A811BC /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801A98A71B5B6AB700A811BC /* TestCollectionViewCell.xib */; };
+		801A98AD1B5B702100A811BC /* TestCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 801A98AB1B5B702100A811BC /* TestCollectionReusableView.m */; };
+		801A98AE1B5B702100A811BC /* TestCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801A98AC1B5B702100A811BC /* TestCollectionReusableView.xib */; };
 		801E85951B4BE6900062F764 /* ProductSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 801E85941B4BE6900062F764 /* ProductSectionHeader.m */; };
 		801E85961B4BE6900062F764 /* ProductSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 801E85941B4BE6900062F764 /* ProductSectionHeader.m */; };
 		8029E3AA1B21BE67001C5DBC /* ProductlistStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8029E3A91B21BE67001C5DBC /* ProductlistStoryboardSegue.m */; };
@@ -42,6 +46,7 @@
 		80A063291B1ED08D006A6E4F /* CreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A063281B1ED08D006A6E4F /* CreateProductViewController.m */; };
 		80A063331B1EF595006A6E4F /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80A063321B1EF595006A6E4F /* placeholder.jpg */; };
 		80A063361B1EFCCC006A6E4F /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A063351B1EFCCC006A6E4F /* ProductDetailViewController.m */; };
+		80A362C61B5A7272002C6C8E /* launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80A362C51B5A7272002C6C8E /* launch@2x.png */; };
 		80B6F5621B3D39E4008BD22B /* ProductMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B6F5611B3D39E4008BD22B /* ProductMore.m */; };
 		80B6F5631B3D39E4008BD22B /* ProductMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B6F5611B3D39E4008BD22B /* ProductMore.m */; };
 		80B6F5661B3D3A62008BD22B /* ImageWithCacheMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B6F5651B3D3A62008BD22B /* ImageWithCacheMore.m */; };
@@ -114,6 +119,12 @@
 		80062DDC1B381E09003F1808 /* ball_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ball_icon.jpg; sourceTree = "<group>"; };
 		80062DDE1B382365003F1808 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		80062DDF1B382365003F1808 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		801A98A51B5B6AB700A811BC /* TestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
+		801A98A61B5B6AB700A811BC /* TestCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewCell.m; sourceTree = "<group>"; };
+		801A98A71B5B6AB700A811BC /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
+		801A98AA1B5B702100A811BC /* TestCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionReusableView.h; sourceTree = "<group>"; };
+		801A98AB1B5B702100A811BC /* TestCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionReusableView.m; sourceTree = "<group>"; };
+		801A98AC1B5B702100A811BC /* TestCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCollectionReusableView.xib; sourceTree = "<group>"; };
 		801E85931B4BE6900062F764 /* ProductSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSectionHeader.h; sourceTree = "<group>"; };
 		801E85941B4BE6900062F764 /* ProductSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSectionHeader.m; sourceTree = "<group>"; };
 		8029E3A81B21BE67001C5DBC /* ProductlistStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductlistStoryboardSegue.h; sourceTree = "<group>"; };
@@ -152,6 +163,7 @@
 		80A063321B1EF595006A6E4F /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		80A063341B1EFCCC006A6E4F /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		80A063351B1EFCCC006A6E4F /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		80A362C51B5A7272002C6C8E /* launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "launch@2x.png"; path = "../../../../Desktop/launch@2x.png"; sourceTree = "<group>"; };
 		80B6F5581B3D353F008BD22B /* Product+More.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+More.h"; sourceTree = "<group>"; };
 		80B6F5591B3D353F008BD22B /* Product+More.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+More.m"; sourceTree = "<group>"; };
 		80B6F55C1B3D35F4008BD22B /* ImageWithCache+More.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageWithCache+More.h"; sourceTree = "<group>"; };
@@ -311,6 +323,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		801A98A41B5B6A8300A811BC /* TestCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				801A98A51B5B6AB700A811BC /* TestCollectionViewCell.h */,
+				801A98A61B5B6AB700A811BC /* TestCollectionViewCell.m */,
+				801A98A71B5B6AB700A811BC /* TestCollectionViewCell.xib */,
+				801A98AA1B5B702100A811BC /* TestCollectionReusableView.h */,
+				801A98AB1B5B702100A811BC /* TestCollectionReusableView.m */,
+				801A98AC1B5B702100A811BC /* TestCollectionReusableView.xib */,
+			);
+			name = TestCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		8029E3A71B21BDC4001C5DBC /* Segue */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +385,7 @@
 		803328AE1B3151AE00CCBA4B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				801A98A41B5B6A8300A811BC /* TestCollectionViewCell */,
 				80D6CBFF1B4BD2CD005D8BFF /* ProductSectionHeader */,
 				80D6CBFE1B4BD2A2005D8BFF /* ProductTableView */,
 				80017B6E1B46B0EA0000990F /* DoubleTableView */,
@@ -396,6 +422,7 @@
 		80A063311B1EF56F006A6E4F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				80A362C51B5A7272002C6C8E /* launch@2x.png */,
 				80C90E0E1B43D3A200159A01 /* back1.jpg */,
 				80062DDC1B381E09003F1808 /* ball_icon.jpg */,
 				80A063321B1EF595006A6E4F /* placeholder.jpg */,
@@ -563,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80D6CC051B4BD45A005D8BFF /* ProductSectionHeader.xib in Resources */,
+				801A98AE1B5B702100A811BC /* TestCollectionReusableView.xib in Resources */,
 				80C90E0F1B43D3A200159A01 /* back1.jpg in Resources */,
 				80062DDD1B381E09003F1808 /* ball_icon.jpg in Resources */,
 				8003BAD71B1C336B00A9A8CF /* Main.storyboard in Resources */,
@@ -571,6 +599,8 @@
 				80D6CBF51B4B754A005D8BFF /* ProductTableViewCell.xib in Resources */,
 				8003BADC1B1C336C00A9A8CF /* LaunchScreen.xib in Resources */,
 				8003BAD91B1C336C00A9A8CF /* Images.xcassets in Resources */,
+				80A362C61B5A7272002C6C8E /* launch@2x.png in Resources */,
+				801A98A91B5B6AB700A811BC /* TestCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +701,7 @@
 				80835A0D1B3C2C0A00C84D0A /* ImageWithCache.m in Sources */,
 				80D6CBF31B4B754A005D8BFF /* ProductTableViewCell.m in Sources */,
 				8003BACE1B1C336B00A9A8CF /* AppDelegate.m in Sources */,
+				801A98AD1B5B702100A811BC /* TestCollectionReusableView.m in Sources */,
 				805F06BC1B3AA45500BBA975 /* Model.xcdatamodeld in Sources */,
 				801E85951B4BE6900062F764 /* ProductSectionHeader.m in Sources */,
 				8029E3AA1B21BE67001C5DBC /* ProductlistStoryboardSegue.m in Sources */,
@@ -684,6 +715,7 @@
 				8003BACB1B1C336B00A9A8CF /* main.m in Sources */,
 				80A063261B1ECFD5006A6E4F /* CategoryListTableViewController.m in Sources */,
 				80B6F5621B3D39E4008BD22B /* ProductMore.m in Sources */,
+				801A98A81B5B6AB700A811BC /* TestCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +865,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -845,6 +878,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8f06f98c-4459-4fd5-9388-11022bf2e3b6";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -854,6 +888,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -866,6 +901,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8f06f98c-4459-4fd5-9388-11022bf2e3b6";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

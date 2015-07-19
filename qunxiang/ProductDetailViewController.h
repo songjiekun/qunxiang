@@ -10,7 +10,7 @@
 #import "ProductMore.h"
 #import "ImageWithCacheMore.h"
 
-@interface ProductDetailViewController : UIViewController<UIScrollViewDelegate,ImageWithCacheMoreDelegate>
+@interface ProductDetailViewController : UIViewController<UIScrollViewDelegate,ImageWithCacheMoreDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UILabel *productDescription;
@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *productScrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *outerContentView;
+@property (weak, nonatomic) IBOutlet UICollectionView *testCollectionView;
 
 
 @property (strong, nonatomic) ProductMore *product;

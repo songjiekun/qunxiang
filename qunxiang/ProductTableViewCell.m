@@ -10,6 +10,36 @@
 
 @implementation ProductTableViewCell
 
+/*
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    
+    self=[super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+        //self.contentView.autoresizingMask= UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        
+    }
+    
+    return self;
+    
+}
+
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    
+    self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        
+        //self.contentView.autoresizingMask= UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        
+    }
+    
+    return self;
+    
+}
+ */
+
 - (void)awakeFromNib {
     // Initialization code
 }

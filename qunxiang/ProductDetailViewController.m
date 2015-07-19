@@ -8,6 +8,8 @@
 
 #import "ProductDetailViewController.h"
 #import "ImageWithCacheMore.h"
+#import "TestCollectionViewCell.h"
+#import "TestCollectionReusableView.h"
 
 @interface ProductDetailViewController ()
 
@@ -38,6 +40,13 @@
     
     [self.outerContentView addConstraint:contentWidth];
     self.pageWidth=[[UIScreen mainScreen] bounds].size.width;
+    
+    
+    //注册 custom cell
+    UINib *nib = [UINib nibWithNibName:@"TestCollectionViewCell" bundle:nil];
+    [self.testCollectionView registerNib:nib forCellWithReuseIdentifier:@"TestCollectionViewCell"];
+    UINib *nibC = [UINib nibWithNibName:@"TestCollectionReusableView" bundle:nil];
+    [self.testCollectionView registerNib:nibC forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TestCollectionReusableView"];
     
 }
 
@@ -76,6 +85,54 @@
     
     [self loadVisiblePages];
     
+    //collection view resize
+    [self.testCollectionView.collectionViewLayout invalidateLayout];;
+    
+}
+
+#pragma mark - collection view代理
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 10;
+    
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    
+    return 1;
+}
+
+
+-(UICollectionViewCell* )collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TestCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestCollectionViewCell" forIndexPath:indexPath];
+    
+    return cell;
+    
+}
+
+-(UICollectionReusableView* )collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    TestCollectionReusableView* headerView=[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TestCollectionReusableView" forIndexPath:indexPath];
+    
+    return headerView;
+    
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout  sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.testCollectionView layoutIfNeeded];
+    CGSize itemSize=self.testCollectionView.frame.size;
+    
+    return itemSize;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    
+    [self.testCollectionView layoutIfNeeded];
+    CGSize headerSize= self.testCollectionView.frame.size;
+    headerSize.width=100;
+    
+    return headerSize;
 }
 
 

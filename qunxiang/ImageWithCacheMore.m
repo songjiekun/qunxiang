@@ -57,7 +57,7 @@
     if (self.theState==ImageStateFailed) {
         
         //如果图片是失败的状态，直接返回默认图片
-        return [UIImage imageNamed:@"placeholder"];
+        return [UIImage imageNamed:@"launch"];
         
     }
     
@@ -129,7 +129,7 @@
             }];
             
             //先返回placeholder图片
-            return [UIImage imageNamed:@"placeholder"];
+            return [UIImage imageNamed:@"launch"];
             
         }
         else {
@@ -186,7 +186,7 @@
             [internetQueue addOperation:self.internetOperation];
             
             //先返回placeholder图片
-            return [UIImage imageNamed:@"placeholder"];
+            return [UIImage imageNamed:@"launch"];
             
         }
         
