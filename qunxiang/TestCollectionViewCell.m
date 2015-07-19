@@ -12,6 +12,16 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    //self.contentView.frame=self.bounds;
+    //self.contentView.autoresizingMask=UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+}
+
+-(void)setBounds:(CGRect)bounds{
+    
+    [super setBounds:bounds];
+    self.contentView.frame=bounds;
+    
 }
 
 @end

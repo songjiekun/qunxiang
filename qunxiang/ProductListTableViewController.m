@@ -39,7 +39,6 @@
          */
         
         
-        
         self.imageCache=[[NSCache alloc] init];
         
         self.ioQueue=[[NSOperationQueue alloc] init];
@@ -114,8 +113,9 @@
     //ios 8设置tableview的高度
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)]){
         
+        NSInteger pageWidth= [[UIScreen mainScreen] bounds].size.width;
         self.tableView.rowHeight= UITableViewAutomaticDimension;
-        self.tableView.estimatedRowHeight=200;
+        self.tableView.estimatedRowHeight=(pageWidth-40)*0.75+10+88;
     }
     
     //去掉系统默认分割线

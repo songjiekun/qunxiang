@@ -18,7 +18,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56f-Ei-Kew">
                         <rect key="frame" x="20" y="10" width="333" height="250"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="56f-Ei-Kew" secondAttribute="height" multiplier="4:3" id="PhQ-On-06G"/>
+                            <constraint firstAttribute="width" secondItem="56f-Ei-Kew" secondAttribute="height" multiplier="4:3" priority="750" id="PhQ-On-06G"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJ5-iZ-6gN">

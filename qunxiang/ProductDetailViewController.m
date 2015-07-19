@@ -58,6 +58,13 @@
     [self loadVisiblePages];
 }
 
+- (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    
+    //[self loadVisiblePages];
+}
+
 #pragma mark - rotation
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
@@ -110,6 +117,23 @@
     
 }
 
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout  sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+
+    CGSize itemSize=CGSizeMake(self.testCollectionView.frame.size.width, self.testCollectionView.frame.size.height-2);
+    
+    return itemSize;
+}
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    
+    
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+    
+}
+
+
+/*
 -(UICollectionReusableView* )collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
     TestCollectionReusableView* headerView=[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TestCollectionReusableView" forIndexPath:indexPath];
@@ -118,13 +142,7 @@
     
 }
 
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout  sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [self.testCollectionView layoutIfNeeded];
-    CGSize itemSize=self.testCollectionView.frame.size;
-    
-    return itemSize;
-}
+
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     
@@ -134,7 +152,7 @@
     
     return headerSize;
 }
-
+*/
 
 #pragma mark - scroll代理
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

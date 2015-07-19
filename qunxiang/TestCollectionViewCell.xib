@@ -17,8 +17,8 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EUg-Pw-y6Q">
                         <rect key="frame" x="10" y="10" width="480" height="480"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="480" id="Qai-xN-Ujr"/>
-                            <constraint firstAttribute="width" secondItem="EUg-Pw-y6Q" secondAttribute="height" multiplier="1:1" id="RZT-px-WL7"/>
+                            <constraint firstAttribute="width" priority="750" constant="480" id="Qai-xN-Ujr"/>
+                            <constraint firstAttribute="width" secondItem="EUg-Pw-y6Q" secondAttribute="height" multiplier="1:1" priority="750" id="RZT-px-WL7"/>
                         </constraints>
                     </imageView>
                 </subviews>
